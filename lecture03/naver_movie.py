@@ -28,8 +28,6 @@ for i in range(1000):
         star_points.append(star_point)
         comments.append(comment)
 
-    time.sleep(1)
-
 data_frame = pandas.DataFrame(comments, columns=['리뷰'])
 data_frame['별점'] = star_points
-data_frame.to_csv('naver_movie.csv', index=False)
+data_frame.to_csv('naver_movie2.csv', index=False)
