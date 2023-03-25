@@ -1,4 +1,4 @@
-id	document	label
+id	review	label
 6270596	굳 ㅋ	1
 9274899	GDNTOPCLASSINTHECLUB	0
 8544678	뭐야 이 평점들은.... 나쁘진 않지만 10점 짜리는 더더욱 아니잖아	0
