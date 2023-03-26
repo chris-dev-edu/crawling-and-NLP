@@ -1,8 +1,8 @@
-import pandas as pd
+import pandas
 import numpy as np
 
 # 데이터를 data에 저장한다.
-data = pd.read_table('ratings_train.txt')
+data = pandas.read_csv('ratings_train.csv')
 
 # 훈련용 데이터의 리뷰 개수와 상위 5개를 출력
 print('훈련용 리뷰 개수 :', len(data))

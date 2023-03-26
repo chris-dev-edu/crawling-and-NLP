@@ -5,7 +5,7 @@ from tqdm import tqdm
 from keras.preprocessing.text import Tokenizer
 
 # 데이터를 data에 저장한다.
-data = pd.read_table('ratings_test.txt')
+data = pd.read_csv('ratings_test.csv')
 
 # 훈련용 데이터의 리뷰 개수와 상위 5개를 출력
 print('훈련용 리뷰 개수 :', len(data))
