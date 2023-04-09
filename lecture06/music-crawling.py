@@ -6,10 +6,12 @@ from selenium.webdriver.common.by import By
 
 driver = webdriver.Edge()
 
-def getUrlByYear(year):
+
+def get_url_by_year(year):
     return "https://www.genie.co.kr/chart/musicHistory?year={}&category=0".format(year)
 
-def get_song_infos(driver, titles):
+
+def get_song_info(driver, titles):
     song_links = driver.find_elements(by=By.CLASS_NAME, value="link")
 
     num_of_songs = len(song_links)
@@ -31,24 +33,24 @@ def get_song_infos(driver, titles):
 
         driver.back()
 
+
 all_title = {}
 
-for year in range(1970, 1980):
-    url = getUrlByYear(year)
+for year in range(1971, 1972):
+    url = get_url_by_year(year)
 
     titles = []
 
     driver.get(url)
-    get_song_infos(driver, titles)
+    get_song_info(driver, titles)
 
     song_links = driver.find_elements(by=By.CLASS_NAME, value="link")
     num_of_songs = len(song_links)
 
     if num_of_songs > 49:
         driver.find_element(by=By.CLASS_NAME, value='page-nav').find_elements(by=By.TAG_NAME, value='a')[1].click()
-        get_song_infos(driver, titles)
+        get_song_info(driver, titles)
 
     all_title[year] = titles
-    print(len(titles))
 
 print(all_title)
