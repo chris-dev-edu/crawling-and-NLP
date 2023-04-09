@@ -1,19 +1,14 @@
-import time
-
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 driver = webdriver.Edge()
 
-
 def get_url_by_year(year):
     return "https://www.genie.co.kr/chart/musicHistory?year={}&category=0".format(year)
 
-
 def get_song_info(driver, titles):
     song_links = driver.find_elements(by=By.CLASS_NAME, value="link")
-
     num_of_songs = len(song_links)
 
     for num in range(num_of_songs):
@@ -32,7 +27,6 @@ def get_song_info(driver, titles):
         titles.append(title)
 
         driver.back()
-
 
 all_title = {}
 
